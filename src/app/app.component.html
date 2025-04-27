@@ -9,7 +9,7 @@
         Побалуйте себя и своих близких самыми вкусными и ароматными домашними пироженками Macaroon!
       </div>
       <div class="main__action">
-        <button class="btn main__btn">Выбрать макарун</button>
+        <button class="btn main__btn" (click)="scrollTo(chooseElement)">Выбрать макарун</button>
       </div>
     </div>
     <div class="main__image">
@@ -40,53 +40,20 @@
     </div>
     <div class="info__bottom-block">
       <div class="info__items">
-        <div class="info__item">
+        <div class="info__item" *ngFor="let advantage of advantages, let i = index">
           <div class="info__ellipse">
-            <div class="info__ellipse-text">1</div>
+            <div class="info__ellipse-text">{{i + 1}}</div>
           </div>
-          <div class="info__title">Лучшие продукты</div>
+          <div class="info__title">{{advantage.title}}</div>
           <div class="info__description">
-            Мы честно готовим макаруны только из натуральных и качественных продуктов. Мы не используем
-            консерванты, ароматизаторы и красители.
-          </div>
-        </div>
-        <div class="info__item">
-          <div class="info__ellipse">
-            <div class="info__ellipse-text">2</div>
-          </div>
-          <div class="info__title">Много вкусов</div>
-          <div class="info__description">
-            Наша задача – предоставить вам широкое разнобразие вкусов. Вы удивитесь, но у нас более 70
-            вкусов пироженок.
-          </div>
-        </div>
-        <div class="info__item">
-          <div class="info__ellipse">
-            <div class="info__ellipse-text">3</div>
-          </div>
-          <div class="info__title">Бисквитное тесто</div>
-          <div class="info__description">
-            Все пирожные готовятся на бисквитном тесте с качественным сливочным маслом 82,5%. В составе
-            нет маргарина и дрожжей!
-          </div>
-        </div>
-        <div class="info__item">
-
-          <div class="info__ellipse">
-            <div class="info__ellipse-text">4</div>
-          </div>
-          <div class="info__title">Честный продукт</div>
-          <div class="info__description">
-            Вкус, качество и безопасность наших пирогов подтверждена декларацией о соответствии, которую
-            мы получили 22.06.2016 г.
+            {{advantage.description}}
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-<section class="order">
+<section class="order" #chooseElement>
   <div class="container">
     <div class="order__title">
       <h2>Выберите свой макарун</h2>
