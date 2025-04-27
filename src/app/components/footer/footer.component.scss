@@ -1,0 +1,31 @@
+.footer {
+  background-color: #c0707c;
+  padding: 73px 0 62px 0;
+  .container {
+    .box();
+    justify-content: space-between;
+    .footer__left {
+      .rights {
+        margin-top: 19px;
+        font-size: 12px;
+        font-family: Gilroy-Regular, sans-serif;
+        color: rgb(227, 172, 180);
+      }
+    }
+    .footer__middle {
+      text-align: center;
+      .footer__middle-text {
+        margin-top: 15px;
+        font-size: 16px;
+        font-family: Gilroy-Bold, sans-serif;
+        color: white;
+      }
+    }
+  }
+}
+
+.number {
+  font-size: 16px;
+  font-family: Gilroy-Bold, sans-serif;
+  color: white;
+}

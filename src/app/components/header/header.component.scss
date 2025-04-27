@@ -1,0 +1,38 @@
+.header {
+  background-color: $main-color;
+  text-align: center;
+  padding: 38px 0;
+  svg {
+    display: none;
+  }
+  .container {
+    .box();
+    justify-content: space-between;
+    .menu__list {
+      display: flex;
+      list-style: none;
+      justify-content: space-between;
+      width: 320px;
+      .menu__item {
+        text-decoration: none;
+        font-size: 14px;
+        font-family: Gilroy-Medium, sans-serif;
+        color: $text-color-first;
+        &:hover {
+          border-bottom: 2px solid $text-color-first;
+          padding-bottom: 3px;
+        }
+      }
+    }
+  }
+}
+
+.close {
+  display: none;
+}
+
+.number {
+  font-size: 16px;
+  font-family: Gilroy-Bold, sans-serif;
+  color: white;
+}
