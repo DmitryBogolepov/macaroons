@@ -10,9 +10,9 @@
         </svg>
       </div>
       <ul class="menu__list">
-        <li><a href="#" class="menu__item">Пироженки</a></li>
-        <li><a href="#" class="menu__item">О нас</a></li>
-        <li><a href="#" class="menu__item">Оформить заказ</a></li>
+        <li><a href="#" class="menu__item" (click)="scrollToSection('order')">Пироженки</a></li>
+        <li><a href="#" class="menu__item" (click)="scrollToSection('info')">О нас</a></li>
+        <li><a href="#" class="menu__item" (click)="scrollToSection('inputForm')">Оформить заказ</a></li>
       </ul>
     </nav>
     <div class="number first">{{socials.phone}}</div>

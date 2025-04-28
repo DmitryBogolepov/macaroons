@@ -12,4 +12,11 @@ export class HeaderComponent{
         phone:"+375 (29) 368-98-68",
         instagram: "https://www.instagram.com/"
     }
+
+  scrollToSection(id: string) {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 }
