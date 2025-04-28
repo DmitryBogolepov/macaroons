@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
-import {AdvantageType} from "./components/types/advantage.type";
+import {ItemType} from "./components/types/advantage.type";
+import {MacaroonType} from "./components/types/macaroon.type";
 
 @Component({
     selector: 'app-component',
@@ -7,7 +8,7 @@ import {AdvantageType} from "./components/types/advantage.type";
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-    public advantages: AdvantageType[] = [
+    public advantages: ItemType[] = [
         {
             title: "Лучшие продукты",
             description: "Мы честно готовим макаруны только из натуральных и качественных продуктов. Мы не используем консерванты, ароматизаторы и красители."
@@ -30,6 +31,52 @@ export class AppComponent {
         target.scrollIntoView({behavior: 'smooth'});
     }
 
+    public macaroons: MacaroonType[] = [
+        {
+            image: "pic3.png",
+            title: 'Макарун с малиной',
+            description: '1 шт. 1,70 руб.'
+        },
+        {
+            image: "pic4.png",
+            title: 'Макарун с манго',
+            description: '1 шт. 1,70 руб.'
+        },
+        {
+            image: "pic6.png",
+            title: 'Пирог с ванилью',
+            description: '1 шт. 1,70 руб.'
+        },
+        {
+            image: "pic7.png",
+            title: 'Пирог с фисташками',
+            description: '1 шт. 1,70 руб.'
+        }
+    ]
+
+    public formValue = {
+        productTitle: '',
+        name: '',
+        phone: ''
+    }
+    public showErrors:boolean = false;
+    public createOrder() {
+        this.showErrors = true;
+        const hasError:boolean = !this.formValue.productTitle || !this.formValue.name || !this.formValue.phone;
+        if (hasError) {
+            console.log('Форма заполнена некорректно');
+            return;
+        } else {
+            this.showErrors = false;
+        }
+    }
+
+    public addToCard(product: MacaroonType, target: HTMLElement): void {
+        this.scrollTo(target);
+        this.formValue.productTitle = product.title.toUpperCase();
+    }
+
+    public showPresent:boolean = true;
 }
 
 

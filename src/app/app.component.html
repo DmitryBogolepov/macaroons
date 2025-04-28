@@ -59,63 +59,17 @@
       <h2>Выберите свой макарун</h2>
     </div>
     <div class="order-items">
-      <div class="order__item">
+      <div class="order__item" *ngFor="let macaroon of macaroons">
         <div class="order__image">
-          <img src="../assets/images/pic3.png" alt="macaroon">
+          <img src="../assets/images/{{macaroon.image}}" alt="macaroon">
         </div>
-        <div class="order__name">Макарун с малиной</div>
+        <div class="order__name">{{macaroon.title}}</div>
         <div class="order__bottom">
           <div class="order__info">
-            1 шт.
-            1,70 руб.
+            {{macaroon.description}}
           </div>
           <div class="order__action">
-            <button class="btn order__btn">Заказать</button>
-          </div>
-        </div>
-      </div>
-      <div class="order__item">
-        <div class="order__image">
-          <img src="../assets/images/pic4.png" alt="macaroon">
-        </div>
-        <div class="order__name">Макарун с манго</div>
-        <div class="order__bottom">
-          <div class="order__info">
-            1 шт.
-            1,70 руб.
-          </div>
-          <div class="order__action">
-            <button class="btn order__btn">Заказать</button>
-          </div>
-        </div>
-      </div>
-      <div class="order__item">
-        <div class="order__image">
-          <img src="../assets/images/pic6.png" alt="macaroon">
-        </div>
-        <div class="order__name">Пирог с ванилью</div>
-        <div class="order__bottom">
-          <div class="order__info">
-            1 шт.
-            1,70 руб.
-          </div>
-          <div class="order__action">
-            <button class="btn order__btn">Заказать</button>
-          </div>
-        </div>
-      </div>
-      <div class="order__item">
-        <div class="order__image">
-          <img src="../assets/images/pic7.png" alt="macaroon">
-        </div>
-        <div class="order__name">Пирог с фисташками</div>
-        <div class="order__bottom">
-          <div class="order__info">
-            1 шт.
-            1,70 руб.
-          </div>
-          <div class="order__action">
-            <button class="btn order__btn">Заказать</button>
+            <button class="btn order__btn" (click)="addToCard(macaroon, orderElement)">Заказать</button>
           </div>
         </div>
       </div>
@@ -123,7 +77,7 @@
   </div>
 </section>
 
-<section class="bottom" id="bottom">
+<section class="bottom" #orderElement>
   <div class="container ">
     <div class="strawberry">
       <img src="../assets/images/pic9.png" alt="strawberry">
@@ -139,22 +93,22 @@
       <div class="bottom__inputs">
         <div class="first-input">
           <div class="bottom__inputs-text">Ваш выбор</div>
-          <input type="text" placeholder="Напишите, что хотите заказать..." class="input" id="product">
-          <div class="invalid" id="product-error">Необходимо ввести заказ</div>
+          <input type="text" placeholder="Напишите, что хотите заказать..." class="input" [(ngModel)]="formValue.productTitle">
+          <div class="invalid" *ngIf="showErrors && !formValue.productTitle">Необходимо ввести заказ</div>
         </div>
         <div class="second-inputs">
           <div class="bottom__inputs-text">Заполните данные для заказа</div>
           <div>
-            <input type="text" placeholder="Ваше имя" class="input" id="name">
-            <div class="invalid" id="name-error">Необходимо ввести имя</div>
+            <input type="text" placeholder="Ваше имя" class="input" [(ngModel)]="formValue.name">
+            <div class="invalid" *ngIf="showErrors && !formValue.name">Необходимо ввести имя</div>
           </div>
           <div>
-            <input type="text" placeholder="+375 (__) ___ - __ - __" class="input margin-input" id="number">
-            <div class="invalid" id="number-error">Необходимо ввести номер телефона</div>
+            <input type="text" placeholder="+375 (__) ___ - __ - __" class="input margin-input" [(ngModel)]="formValue.phone">
+            <div class="invalid" *ngIf="showErrors && !formValue.phone">Необходимо ввести номер телефона</div>
           </div>
         </div>
         <div class="bottom-action">
-          <button type="button" class="btn bottom__btn" id="order-confirm">Оформить заказ</button>
+          <button type="button" class="btn bottom__btn" (click)="createOrder()">Оформить заказ</button>
         </div>
       </div>
     </div>
@@ -168,7 +122,7 @@
 </div>
 
 
-<div class="gift-section">
+<div class="gift-section" *ngIf="showPresent">
   <div class="gift-block">
     <div class="gift-text">
       Оформите заказ
