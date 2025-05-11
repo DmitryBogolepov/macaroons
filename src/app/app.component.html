@@ -9,7 +9,7 @@
         Побалуйте себя и своих близких самыми вкусными и ароматными домашними пироженками Macaroon!
       </div>
       <div class="main__action">
-        <button class="btn main__btn" (click)="scrollTo(chooseElement)">Выбрать макарун</button>
+        <button class="btn main__btn" (click)="scrollTo(chooseElement)" appButtonEffects >Выбрать макарун</button>
       </div>
     </div>
     <div class="main__image">
@@ -69,7 +69,7 @@
             {{macaroon.description}}
           </div>
           <div class="order__action">
-            <button class="btn order__btn" (click)="addToCard(macaroon, orderElement)">Заказать</button>
+            <button class="btn order__btn" (click)="addToCard(macaroon, orderElement)" appButtonEffects>Заказать</button>
           </div>
         </div>
       </div>
@@ -108,7 +108,7 @@
           </div>
         </div>
         <div class="bottom-action">
-          <button type="button" class="btn bottom__btn" (click)="createOrder()">Оформить заказ</button>
+          <button type="button" class="btn bottom__btn" (click)="createOrder()" appButtonEffects>Оформить заказ</button>
         </div>
       </div>
     </div>
