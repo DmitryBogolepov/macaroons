@@ -1,13 +1,16 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ItemType} from "./components/types/advantage.type";
 import {MacaroonType} from "./components/types/macaroon.type";
+import {ProductService} from "./services/product.service";
 
 @Component({
     selector: 'app-component',
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss']
+    styleUrls: ['./app.component.scss'],
+
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
+  public macaroons: MacaroonType[] = [];
     public advantages: ItemType[] = [
         {
             title: "Лучшие продукты",
@@ -30,31 +33,15 @@ export class AppComponent {
     public scrollTo(target: HTMLElement): void {
         target.scrollIntoView({behavior: 'smooth'});
     }
+    constructor(private productService:ProductService) {
+    }
 
-    public macaroons: MacaroonType[] = [
-        {
-            image: "pic3.png",
-            title: 'Макарун с малиной',
-            description: '1 шт. 1,70 руб.'
-        },
-        {
-            image: "pic4.png",
-            title: 'Макарун с манго',
-            description: '1 шт. 1,70 руб.'
-        },
-        {
-            image: "pic6.png",
-            title: 'Пирог с ванилью',
-            description: '1 шт. 1,70 руб.'
-        },
-        {
-            image: "pic7.png",
-            title: 'Пирог с фисташками',
-            description: '1 шт. 1,70 руб.'
-        }
-    ]
+    ngOnInit() {
 
-    public formValue = {
+      this.macaroons = this.productService.getProducts();
+    }
+
+  public formValue = {
         productTitle: '',
         name: '',
         phone: ''

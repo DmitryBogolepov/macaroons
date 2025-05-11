@@ -9,6 +9,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { ProductComponent } from './components/product/product.component';
 import { ButtonEffectsDirective } from './directives/button-effects.directive';
 import {CurrencyPipe} from './pipes/currency-pipe.pipe';
+import {ProductService} from "./services/product.service";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import {CurrencyPipe} from './pipes/currency-pipe.pipe';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent,FooterComponent,HeaderComponent]
 })
 export class AppModule { }
