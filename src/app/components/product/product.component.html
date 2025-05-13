@@ -1,1 +1,14 @@
-<p>product works!</p>
+<div class="order__item">
+  <div class="order__image">
+    <img src="../assets/images/{{macaroon.image}}" alt="macaroon">
+  </div>
+  <div class="order__name">{{macaroon.title}}</div>
+  <div class="order__bottom">
+    <div class="order__info">
+      {{macaroon.amount}} <br> {{macaroon.price | currencyPipe}}
+    </div>
+    <div class="order__action">
+      <button class="btn order__btn" (click)="addProductToCart()" appButtonEffects>Заказать</button>
+    </div>
+  </div>
+</div>

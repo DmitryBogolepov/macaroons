@@ -38,19 +38,7 @@
         <img src="../assets/images/pic2.png" alt="Big macaroon">
       </div>
     </div>
-    <div class="info__bottom-block">
-      <div class="info__items">
-        <div class="info__item" *ngFor="let advantage of advantages, let i = index">
-          <div class="info__ellipse">
-            <div class="info__ellipse-text">{{i + 1}}</div>
-          </div>
-          <div class="info__title">{{advantage.title}}</div>
-          <div class="info__description">
-            {{advantage.description}}
-          </div>
-        </div>
-      </div>
-    </div>
+    <advantages-comp></advantages-comp>
   </div>
 </section>
 <section class="order" id="order" #chooseElement>
@@ -59,20 +47,7 @@
       <h2>Выберите свой макарун</h2>
     </div>
     <div class="order-items">
-      <div class="order__item" *ngFor="let macaroon of macaroons">
-        <div class="order__image">
-          <img src="../assets/images/{{macaroon.image}}" alt="macaroon">
-        </div>
-        <div class="order__name">{{macaroon.title}}</div>
-        <div class="order__bottom">
-          <div class="order__info">
-            {{macaroon.description}}
-          </div>
-          <div class="order__action">
-            <button class="btn order__btn" (click)="addToCard(macaroon, orderElement)" appButtonEffects>Заказать</button>
-          </div>
-        </div>
-      </div>
+      <product-item *ngFor="let macaroon of macaroons" [macaroon]="macaroon" (addToCartEvent)="addToCard(macaroon, orderElement)"></product-item>
     </div>
   </div>
 </section>
@@ -124,14 +99,15 @@
 
 <div class="gift-section" *ngIf="showPresent">
   <div class="gift-block">
+
     <div class="gift-text">
-      Оформите заказ
-      и получите подарок!
+      {{cartService.sum | currencyPipe}}
     </div>
     <div class="gift-arrow"></div>
   </div>
   <a class="gift" href="#">
-    <img src="../assets/images/present.png" alt="present">
+    <div class="gift-amount">{{cartService.count}}</div>
+    <img src="../assets/images/cart.png" alt="present">
   </a>
 </div>
 <div class="loader">

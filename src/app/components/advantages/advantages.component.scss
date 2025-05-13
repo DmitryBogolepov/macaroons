@@ -1,0 +1,55 @@
+$main-color: rgb(235, 168, 177);
+$second-color: rgb(130, 19, 40);
+$text-color-first: rgb(119, 11, 29);
+$text-color-second: rgb(51, 25, 7);
+$box-shadow:0 5px 9px 1px rgba(130, 19, 40, 0.5);
+$linear-color:rgb(215, 72, 92);
+$linear-color-second:rgb(113, 8, 30);
+$font-color:rgb(118, 12, 34);
+
+
+
+.info__items {
+  margin-top: 88px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 89px;
+  justify-content: space-between;
+  .info__item {
+    .info__ellipse {
+      display: flex;
+      align-items: center;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      font-size: 60px;
+      font-family: "Gilroy-ExtraBold", sans-serif;
+      color:white;
+      background-color: $second-color;
+      justify-content: center;
+      transition: all 0.4s ease;
+      &:hover {
+        color: $second-color;
+        background-color: $main-color;
+      }
+      .info__ellipse-text {
+        padding-top: 17px;
+      }
+    }
+    .info__title {
+      margin-top: 13px;
+      margin-bottom: 20px;
+      font-size: 20px;
+      font-family: "Gilroy-ExtraBold", sans-serif;
+      color: $text-color-second;
+    }
+    .info__description {
+      font-size: 15px;
+      font-family: "Gilroy-Medium", sans-serif;
+      color: $text-color-second;
+      line-height: 1.333;
+      max-width: 207px;
+    }
+
+  }
+}

@@ -11,22 +11,26 @@ export class ProductService {
       {
         image: "pic3.png",
         title: 'Макарун с малиной',
-        description: '1 шт. 1,70 руб.'
+        amount: '1 шт.',
+        price:1.70
       },
       {
         image: "pic4.png",
         title: 'Макарун с манго',
-        description: '1 шт. 1,70 руб.'
+        amount: '1 шт.',
+        price:1.70
       },
       {
         image: "pic6.png",
         title: 'Пирог с ванилью',
-        description: '1 шт. 1,70 руб.'
+        amount: '1 шт.',
+        price:1.70
       },
       {
         image: "pic7.png",
         title: 'Пирог с фисташками',
-        description: '1 шт. 1,70 руб.'
+        amount: '1 шт.',
+        price:1.70
       }
     ]
   }

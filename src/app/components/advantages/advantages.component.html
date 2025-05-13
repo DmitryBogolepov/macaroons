@@ -1,0 +1,13 @@
+<div class="info__bottom-block">
+  <div class="info__items">
+    <div class="info__item" *ngFor="let advantage of advantages, let i = index">
+      <div class="info__ellipse">
+        <div class="info__ellipse-text">{{i + 1}}</div>
+      </div>
+      <div class="info__title">{{advantage.title}}</div>
+      <div class="info__description">
+        {{advantage.description | textLength}}
+      </div>
+    </div>
+  </div>
+</div>

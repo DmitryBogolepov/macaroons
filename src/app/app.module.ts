@@ -10,6 +10,9 @@ import { ProductComponent } from './components/product/product.component';
 import { ButtonEffectsDirective } from './directives/button-effects.directive';
 import {CurrencyPipe} from './pipes/currency-pipe.pipe';
 import {ProductService} from "./services/product.service";
+import { AdvantagesComponent } from './components/advantages/advantages.component';
+import { NumberPipe } from './pipes/number.pipe';
+import { TextLengthPipe } from './pipes/text-length.pipe';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,9 @@ import {ProductService} from "./services/product.service";
     ProductComponent,
     ButtonEffectsDirective,
     CurrencyPipe,
+    AdvantagesComponent,
+    NumberPipe,
+    TextLengthPipe,
   ],
   imports: [
     BrowserModule,
