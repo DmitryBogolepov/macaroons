@@ -25,7 +25,6 @@ export class ProductComponent implements OnInit {
   addProductToCart() {
     this.cartService.count++
     this.cartService.sum = this.cartService.sum + this.macaroon.price;
-    this.addToCartEvent.emit(this.macaroon.title);
   }
 
 }

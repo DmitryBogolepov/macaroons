@@ -417,10 +417,6 @@ $font-color: rgb(118, 12, 34);
     justify-content: space-between;
     margin-left: auto;
     margin-right: auto;
-
-    .order__item {
-      margin-top: 80px;
-    }
   }
   .order__title h2 {
     margin-bottom: 63px;
@@ -473,13 +469,11 @@ $font-color: rgb(118, 12, 34);
   .main {
     .container {
       flex-wrap: wrap;
-
       .main__text-block {
         .main__title {
           max-width: 605px;
         }
       }
-
       .main__image {
         margin-left: 184px;
         margin-top: -90px;
@@ -513,29 +507,6 @@ $font-color: rgb(118, 12, 34);
       margin: 50px auto 0 auto;
     }
   }
-  .info__bottom-block {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .info__items {
-      grid-template-columns: repeat(2, 1fr);
-      grid-gap: 54px;
-
-      .info__item {
-        text-align: center;
-        align-items: center;
-        justify-content: center;
-
-        .info__ellipse {
-          max-width: 207px;
-          text-align: center;
-          margin-right: auto;
-          margin-left: auto;
-        }
-      }
-    }
-  }
 }
 
 @media screen and (max-width: 810px) {
@@ -565,18 +536,15 @@ $font-color: rgb(118, 12, 34);
           margin-right: auto;
         }
       }
-
       .main__image {
         margin-left: auto;
         margin-top: 38px;
         margin-right: auto;
         width: 400px;
-
         .circle {
           width: 450px;
           height: 450px;
         }
-
         .circle1 {
           width: 450px;
           height: 450px;
@@ -598,7 +566,6 @@ $font-color: rgb(118, 12, 34);
     .bottom__image {
       display: none;
     }
-
     .bottom__second-part {
       margin-left: auto;
       margin-right: auto;
@@ -668,14 +635,9 @@ $font-color: rgb(118, 12, 34);
         margin-bottom: 0;
       }
     }
-
     .order-items {
       align-items: center;
       justify-content: center;
-
-      .order__item {
-        margin-top: 142px;
-      }
     }
   }
   .strawberry {
@@ -701,15 +663,6 @@ $font-color: rgb(118, 12, 34);
       }
     }
   }
-  .info__item {
-    .info__title {
-      font-size: 18px;
-    }
-
-    .info__description {
-      font-size: 13px;
-    }
-  }
   .strawberry {
     left: 285px;
     top: 240px;
@@ -723,7 +676,6 @@ $font-color: rgb(118, 12, 34);
         }
       }
     }
-
     .main__image {
       .circle {
         width: 370px;
@@ -745,18 +697,31 @@ $font-color: rgb(118, 12, 34);
   .bottom__title {
     text-align: left;
   }
-  .info__items {
-    grid-gap: 30px 15px;
-    margin-top: 60px;
-
-    .info__description {
-      width: 159px;
-    }
+  .input {
+    width: 274px;
+  }
+  .bottom__btn {
+    width: 274px;
   }
   .info__top-block__text {
     h2 {
       margin-bottom: 40px;
     }
+  }
+  .main{
+    .container {
+      .main__text-block {
+        .main__title {
+          h1{
+            font-size: 48px;
+          }
+        }
+      }
+    }
+  }
+  .strawberry {
+    left: 240px;
+    top: 315px;
   }
 }
 

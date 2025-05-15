@@ -63,6 +63,7 @@ $font-color:rgb(118, 12, 34);
     padding-bottom: 0;
     .container {
       justify-content: space-between;
+      padding: 0 8px;
       .menu {
         display: none;
         position: fixed;
@@ -100,6 +101,22 @@ $font-color:rgb(118, 12, 34);
           display: block;
           width: 42px;
           fill: #821328;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 375px) {
+  .first {
+    font-size: 14px;
+  }
+  .header{
+    .container{
+      .svg {
+        svg {
+          width: 38px;
         }
       }
     }
