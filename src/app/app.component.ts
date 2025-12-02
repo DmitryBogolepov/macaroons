@@ -13,7 +13,6 @@ import {CartService} from "./services/cart.service";
 export class AppComponent implements OnInit{
   public macaroons: MacaroonType[] = [];
 
-
     public scrollTo(target: HTMLElement): void {
         target.scrollIntoView({behavior: 'smooth'});
     }
@@ -44,7 +43,7 @@ export class AppComponent implements OnInit{
     public addToCard(product: MacaroonType, target: HTMLElement): void {
         this.scrollTo(target);
         this.formValue.productTitle = product.title.toUpperCase();
-        this.cartService.count++
+        this.cartService.count++;
         this.cartService.sum = this.cartService.sum + product.price;
         alert(product.title+ ' добавлен в корзину!')
     }

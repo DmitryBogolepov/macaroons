@@ -96,16 +96,14 @@
   <span>Спасибо за Ваш заказ. <br>Мы скоро свяжемся с Вами!</span>
 </div>
 
-
 <div class="gift-section" *ngIf="showPresent">
   <div class="gift-block">
-
     <div class="gift-text">
       {{cartService.sum | currencyPipe}}
     </div>
     <div class="gift-arrow"></div>
   </div>
-  <a class="gift" href="#">
+  <a class="gift" href="#inputForm">
     <div class="gift-amount">{{cartService.count}}</div>
     <img src="../assets/images/cart.png" alt="present">
   </a>
